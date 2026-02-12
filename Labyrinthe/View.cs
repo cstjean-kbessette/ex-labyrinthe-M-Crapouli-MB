@@ -2,7 +2,7 @@
 {
     internal class View
     {
-        
+
         public void AfficherEntete()
         {
             Console.Clear();
@@ -20,6 +20,24 @@
             Console.WriteLine("Merci d'avoir joué !");
             Console.WriteLine("\nAppuyez sur une touche pour quitter...");
             Console.ReadKey();
+        }
+        public void AfficherLabyrinthe(Labyrinthe labyrinthe)
+        {
+            for (int i = 0; i < labyrinthe.Map.GetLength(0); i++)
+            {
+                for (int j = 0; j < labyrinthe.Map.GetLength(1); j++)
+                {
+                    if (i == labyrinthe.PosY && j == labyrinthe.PosX)
+                    {
+                        Console.Write('P');
+                    }
+                    else
+                    {
+                        Console.Write(labyrinthe.Map[i, j]);
+                    }
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
